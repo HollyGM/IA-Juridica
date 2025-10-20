@@ -1,0 +1,29 @@
+# Extração de texto
+pypdf>=4.0.0
+chardet>=5.0.0
+PyMuPDF>=1.23.0
+pdfplumber>=0.10.0
+python-docx>=1.0.0
+
+# NLP - Modelos e bibliotecas para português
+spacy>=3.7.0
+transformers>=4.35.0
+torch>=2.1.0
+sentence-transformers>=2.2.0
+
+# NLP especializado para domínio jurídico
+flair>=0.13.0
+
+# Análise de texto
+nltk>=3.8.0
+regex>=2023.10.0
+
+# Indexação e vetorização para RAG
+faiss-cpu>=1.7.4
+chromadb>=0.4.0
+
+# Utilitários
+numpy>=1.24.0
+pandas>=2.1.0
+scikit-learn>=1.3.0
+tqdm>=4.66.0

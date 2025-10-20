@@ -1,0 +1,211 @@
+================================================================================
+  SOLUCAO DE PROBLEMAS
+  Sistema de IA Juridica v2.0
+================================================================================
+
+PROBLEMA: O arquivo .BAT fecha imediatamente sem mostrar nada
+================================================================================
+
+SOLUCOES (tente nesta ordem):
+
+1. EXECUTAR_SIMPLES.bat
+   -------------------------------------------
+   Este e um arquivo mais simples que NAO fecha automaticamente.
+
+   → Clique duas vezes em: EXECUTAR_SIMPLES.bat
+   → Ele mostrara cada passo e esperara voce pressionar uma tecla
+
+
+2. DEBUG_COMPLETO.bat
+   -------------------------------------------
+   Este arquivo mostra TODAS as informacoes do sistema passo a passo.
+
+   → Clique duas vezes em: DEBUG_COMPLETO.bat
+   → Pressione ENTER em cada etapa
+   → Veja qual etapa esta falhando
+
+
+3. TESTE_SIMPLES.bat
+   -------------------------------------------
+   Testa cada componente individualmente.
+
+   → Clique duas vezes em: TESTE_SIMPLES.bat
+   → Veja o resultado de cada teste
+
+
+4. Executar via linha de comando
+   -------------------------------------------
+   a) Pressione Windows + R
+   b) Digite: cmd
+   c) Pressione ENTER
+   d) Digite: cd "E:\TXT-PDF = JSON"
+   e) Digite: python main.py
+   f) Veja as mensagens de erro (se houver)
+
+
+================================================================================
+  PROBLEMAS COMUNS E SOLUCOES
+================================================================================
+
+PROBLEMA: "Python nao encontrado"
+-------------------------------------------
+CAUSA: Python nao esta instalado ou nao esta no PATH
+
+SOLUCAO:
+1. Baixe Python de: https://www.python.org/downloads/
+2. Durante a instalacao, MARQUE a opcao:
+   [X] Add Python to PATH  ← MUITO IMPORTANTE!
+3. Reinicie o computador
+4. Tente novamente
+
+
+PROBLEMA: "main.py nao encontrado"
+-------------------------------------------
+CAUSA: Voce esta executando o .bat da pasta errada
+
+SOLUCAO:
+1. Verifique se voce esta na pasta correta
+2. A pasta deve conter:
+   - main.py
+   - config.py
+   - requirements.txt
+   - Pasta "modules" com varios arquivos .py
+
+
+PROBLEMA: "Modulo 'pypdf' nao encontrado" ou similar
+-------------------------------------------
+CAUSA: Dependencias nao estao instaladas
+
+SOLUCAO:
+1. Execute: INSTALAR_COMPLETO.bat
+2. OU execute manualmente:
+   a) Abra o Prompt de Comando (cmd)
+   b) Digite: pip install pypdf chardet
+   c) Pressione ENTER
+
+
+PROBLEMA: Janela abre e fecha muito rapido
+-------------------------------------------
+CAUSA: Pode ser um erro de sintaxe ou caminho com espacos
+
+SOLUCAO:
+1. Execute via linha de comando (veja opcao 4 acima)
+2. Use: EXECUTAR_SIMPLES.bat (mais robusto)
+3. Use: DEBUG_COMPLETO.bat (mostra tudo)
+
+
+PROBLEMA: "Nao e possivel encontrar o caminho especificado"
+-------------------------------------------
+CAUSA: O nome da pasta tem caracteres especiais ou espacos
+
+SOLUCAO:
+1. Certifique-se de que esta executando o .bat
+   DENTRO da pasta do programa
+2. Nao tente executar de outra pasta
+
+
+================================================================================
+  TESTANDO O SISTEMA MANUALMENTE
+================================================================================
+
+Abra o Prompt de Comando (cmd) e execute:
+
+1. Testar Python:
+   python --version
+
+2. Ir para a pasta do programa:
+   cd "E:\TXT-PDF = JSON"
+
+3. Testar imports basicos:
+   python -c "from modules import file_scanner"
+
+4. Testar dependencias:
+   python -c "import pypdf"
+
+5. Executar programa:
+   python main.py
+
+
+================================================================================
+  INSTALACAO MANUAL DE DEPENDENCIAS
+================================================================================
+
+Se INSTALAR_COMPLETO.bat nao funcionar, tente manualmente:
+
+1. Abra o Prompt de Comando como Administrador
+2. Execute os comandos abaixo, um por vez:
+
+pip install --upgrade pip
+pip install pypdf
+pip install chardet
+pip install PyMuPDF
+pip install pdfplumber
+pip install python-docx
+
+
+Para NLP completo (opcional):
+pip install spacy
+pip install transformers
+pip install torch
+pip install sentence-transformers
+python -m spacy download pt_core_news_sm
+
+
+================================================================================
+  ARQUIVOS .BAT DISPONIVEIS (do mais simples ao mais completo)
+================================================================================
+
+PARA TESTAR:
+1. TESTE_SIMPLES.bat         - Testa componentes basicos
+2. DEBUG_COMPLETO.bat        - Mostra tudo, passo a passo
+3. EXECUTAR_SIMPLES.bat      - Execucao simples, nunca fecha sozinho
+
+PARA USAR:
+4. EXECUTAR_IA_JURIDICA.bat  - Execucao completa (pode ter problema)
+5. MODO_RAPIDO.bat           - Execucao rapida sem NLP
+
+PARA INSTALAR:
+6. INSTALAR_COMPLETO.bat     - Instala tudo
+
+
+================================================================================
+  AINDA NAO FUNCIONA?
+================================================================================
+
+Execute estes comandos e me envie o resultado:
+
+1. Abra cmd e digite:
+   python --version
+   where python
+   cd "E:\TXT-PDF = JSON"
+   dir main.py
+   python -c "print('teste')"
+
+2. Ou execute:
+   DEBUG_COMPLETO.bat
+
+3. Anote as mensagens de erro que aparecem
+
+
+================================================================================
+  INFORMACOES ADICIONAIS
+================================================================================
+
+Pasta do programa: E:\TXT-PDF = JSON
+
+Arquivos principais:
+- main.py                    (programa principal)
+- config.py                  (configuracoes)
+- requirements.txt           (lista de dependencias)
+- modules\*.py               (modulos do sistema)
+
+Documentacao:
+- START_HERE.txt             (comece por aqui)
+- GUIA_RAPIDO.md             (tutorial passo a passo)
+- README_V2.md               (documentacao completa)
+- Este arquivo               (solucao de problemas)
+
+
+================================================================================
+FIM - SOLUCAO DE PROBLEMAS
+================================================================================

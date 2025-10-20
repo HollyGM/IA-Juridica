@@ -1,0 +1,218 @@
+================================================================================
+  INDICE DE ARQUIVOS .BAT
+  Qual arquivo executar?
+================================================================================
+
+⚠️  IMPORTANTE: Se o EXECUTAR_IA_JURIDICA.bat fecha imediatamente,
+    use os arquivos alternativos abaixo!
+
+================================================================================
+  🔧 PARA DIAGNOSTICAR PROBLEMAS (Use PRIMEIRO!)
+================================================================================
+
+1. DEBUG_COMPLETO.bat ⭐ RECOMENDADO SE DER ERRO
+   -----------------------------------------------
+   • Mostra TUDO passo a passo
+   • Nunca fecha sozinho
+   • Voce pressiona ENTER em cada etapa
+   • Mostra exatamente onde esta o problema
+
+
+2. TESTE_SIMPLES.bat
+   -----------------------------------------------
+   • Testa cada componente do sistema
+   • Mostra quais testes passaram/falharam
+   • Bom para ver o que esta faltando
+
+
+3. SOLUCAO_PROBLEMAS.txt
+   -----------------------------------------------
+   • Arquivo de texto com todas as solucoes
+   • Leia se nada estiver funcionando
+
+================================================================================
+  🚀 PARA EXECUTAR O PROGRAMA (Escolha UM)
+================================================================================
+
+1. EXECUTAR_SIMPLES.bat ⭐ MAIS SEGURO
+   -----------------------------------------------
+   • Versao simplificada que NAO fecha sozinho
+   • Mostra cada passo claramente
+   • Melhor opcao se o outro fecha rapido
+   • USE ESTE SE TIVER PROBLEMAS!
+
+
+2. EXECUTAR_IA_JURIDICA.bat
+   -----------------------------------------------
+   • Versao completa com todas as opcoes
+   • Verifica dependencias automaticamente
+   • Pode instalar durante a execucao
+   • Use se estiver tudo funcionando
+
+
+3. MODO_RAPIDO.bat
+   -----------------------------------------------
+   • Execucao rapida SEM processamento NLP
+   • Apenas extrai texto e gera JSON
+   • Mais rapido para testes
+
+================================================================================
+  📦 PARA INSTALAR DEPENDENCIAS
+================================================================================
+
+1. INSTALAR_COMPLETO.bat
+   -----------------------------------------------
+   • Instala TODAS as dependencias
+   • Baixa modelos de linguagem
+   • Execute ANTES de usar o sistema pela primeira vez
+
+
+2. Instalacao Manual (se o .bat nao funcionar)
+   -----------------------------------------------
+   Abra o Prompt de Comando (cmd) e digite:
+
+   pip install pypdf chardet PyMuPDF pdfplumber python-docx
+
+================================================================================
+  ℹ️  PARA VER INFORMACOES
+================================================================================
+
+1. INFO_SISTEMA.bat
+   -----------------------------------------------
+   • Mostra informacoes completas do sistema
+   • Lista modulos instalados
+   • Estatisticas do codigo
+
+
+2. VER_CONFIGURACAO.bat
+   -----------------------------------------------
+   • Mostra configuracoes disponiveis
+   • Exibe os 3 modos (RAPIDO, PADRAO, COMPLETO)
+
+
+3. TESTAR_NLP.bat
+   -----------------------------------------------
+   • Testa se modulos NLP estao funcionando
+   • Mostra quais bibliotecas estao instaladas
+
+================================================================================
+  📚 DOCUMENTACAO (Arquivos para LER)
+================================================================================
+
+1. START_HERE.txt ⭐ LEIA PRIMEIRO
+   -----------------------------------------------
+   • Introducao ao sistema
+   • Primeiros passos
+   • Visao geral
+
+
+2. GUIA_RAPIDO.md
+   -----------------------------------------------
+   • Tutorial passo a passo
+   • Exemplos de uso
+   • Dicas e truques
+
+
+3. README_V2.md
+   -----------------------------------------------
+   • Documentacao tecnica completa
+   • Lista de recursos
+   • Configuracoes avancadas
+
+
+4. SOLUCAO_PROBLEMAS.txt ⭐ SE DER ERRO
+   -----------------------------------------------
+   • Solucoes para problemas comuns
+   • Guia de diagnostico
+   • Instalacao manual
+
+================================================================================
+  🎯 FLUXO RECOMENDADO (Primeira vez)
+================================================================================
+
+1. ✅ Leia: START_HERE.txt
+   └─ Entenda o que o sistema faz
+
+2. ✅ Execute: DEBUG_COMPLETO.bat
+   └─ Veja se tudo esta funcionando
+
+3. ✅ Se algo falhou: Leia SOLUCAO_PROBLEMAS.txt
+   └─ Siga as instrucoes para corrigir
+
+4. ✅ Execute: INSTALAR_COMPLETO.bat
+   └─ Instale as dependencias necessarias
+
+5. ✅ Execute: EXECUTAR_SIMPLES.bat
+   └─ Teste com 2-3 arquivos PDF/TXT
+
+6. ✅ Tudo funcionou? Use: EXECUTAR_IA_JURIDICA.bat
+   └─ Versao completa para uso normal
+
+
+================================================================================
+  ⚠️  SE O .BAT FECHA IMEDIATAMENTE
+================================================================================
+
+NAO USE: EXECUTAR_IA_JURIDICA.bat
+
+USE ISTO:
+
+  1. DEBUG_COMPLETO.bat       ← Mostra o problema
+  2. EXECUTAR_SIMPLES.bat     ← Nunca fecha sozinho
+  3. SOLUCAO_PROBLEMAS.txt    ← Leia as solucoes
+
+OU execute via linha de comando:
+  1. Pressione Windows + R
+  2. Digite: cmd
+  3. Pressione ENTER
+  4. Digite: cd "E:\TXT-PDF = JSON"
+  5. Digite: python main.py
+
+
+================================================================================
+  📋 LISTA COMPLETA DE ARQUIVOS .BAT
+================================================================================
+
+DEBUG_COMPLETO.bat          - Debug passo a passo ⭐
+EXECUTAR_SIMPLES.bat        - Execucao simples e segura ⭐
+EXECUTAR_IA_JURIDICA.bat    - Execucao completa
+INSTALAR_COMPLETO.bat       - Instalador completo
+MODO_RAPIDO.bat             - Execucao rapida (sem NLP)
+TESTE_SIMPLES.bat           - Teste de componentes
+TESTAR_NLP.bat              - Teste de modulos NLP
+INFO_SISTEMA.bat            - Informacoes do sistema
+VER_CONFIGURACAO.bat        - Ver configuracoes
+
+Arquivos antigos (pode ignorar):
+executar.bat                - Versao antiga
+INICIAR.bat                 - Versao antiga
+instalar_dependencias.bat   - Versao antiga
+
+
+================================================================================
+  🆘 AINDA NAO FUNCIONA?
+================================================================================
+
+1. Execute: DEBUG_COMPLETO.bat
+2. Anote em qual etapa da erro
+3. Leia: SOLUCAO_PROBLEMAS.txt
+4. Procure a solucao para aquela etapa especifica
+
+
+OU
+
+Execute via linha de comando e veja as mensagens de erro:
+  cd "E:\TXT-PDF = JSON"
+  python main.py
+
+
+================================================================================
+FIM DO INDICE
+================================================================================
+
+Proximos passos sugeridos:
+1. Execute DEBUG_COMPLETO.bat para ver se tudo esta OK
+2. Se OK, execute EXECUTAR_SIMPLES.bat com alguns arquivos de teste
+3. Se funcionar, use EXECUTAR_IA_JURIDICA.bat normalmente
+
+================================================================================

@@ -1,0 +1,225 @@
+===============================================================================
+  🧠 SISTEMA DE IA JURÍDICA - ESTRATEGISTA JURÍDICO-COGNITIVO v2.0
+===============================================================================
+
+Bem-vindo ao sistema mais avançado de processamento de documentos jurídicos!
+
+===============================================================================
+  🚀 INÍCIO RÁPIDO (3 PASSOS)
+===============================================================================
+
+1️⃣  INSTALAÇÃO (primeira vez)
+   → Clique duas vezes em: INSTALAR_COMPLETO.bat
+   → Aguarde 5-15 minutos para instalar todas as dependências
+
+2️⃣  EXECUÇÃO
+   → Clique duas vezes em: EXECUTAR_IA_JURIDICA.bat
+   → Siga as instruções interativas na tela
+
+3️⃣  PRONTO!
+   → Selecione sua pasta com PDFs/TXT
+   → Aguarde o processamento
+   → JSON gerado automaticamente!
+
+===============================================================================
+  📚 DOCUMENTAÇÃO
+===============================================================================
+
+→ GUIA_RAPIDO.md         - Tutorial passo a passo (LEIA PRIMEIRO!)
+→ README_V2.md           - Documentação completa e técnica
+→ config.py              - Configurações avançadas do sistema
+
+===============================================================================
+  🎯 ARQUIVOS EXECUTÁVEIS (.BAT)
+===============================================================================
+
+PRINCIPAIS:
+  • EXECUTAR_IA_JURIDICA.bat  → Execução completa do sistema
+  • INSTALAR_COMPLETO.bat     → Instala todas as dependências
+  • MODO_RAPIDO.bat           → Execução rápida sem NLP
+
+UTILITÁRIOS:
+  • TESTAR_NLP.bat            → Verifica instalação dos módulos NLP
+  • VER_CONFIGURACAO.bat      → Mostra configurações disponíveis
+
+===============================================================================
+  ✨ O QUE ESTE SISTEMA FAZ
+===============================================================================
+
+✅ EXTRAÇÃO DE TEXTO
+   • Lê PDFs e arquivos TXT automaticamente
+   • Detecta encoding automaticamente
+   • Preserva estrutura e formatação
+
+✅ ANÁLISE NLP AVANÇADA (Opcional)
+   • Extrai entidades jurídicas:
+     - Números de processo
+     - Leis, artigos, decretos
+     - Tribunais (STF, STJ, TJs, TRFs)
+     - Ministros e desembargadores
+     - Súmulas e jurisprudências
+     - Valores monetários
+     - CPF/CNPJ
+
+   • Gera resumos automáticos dos documentos
+   • Classifica tipo de documento (acórdão, sentença, petição)
+   • Identifica área do direito (civil, penal, trabalhista)
+   • Analisa teses e argumentos
+
+✅ PREPARAÇÃO PARA SISTEMAS RAG
+   • Cria chunks inteligentes com sobreposição
+   • Gera embeddings vetoriais (opcional)
+   • Indexação com FAISS para busca semântica
+   • JSON otimizado para modelos de IA
+
+===============================================================================
+  ⚙️ MODOS DE PROCESSAMENTO
+===============================================================================
+
+🔹 MODO RÁPIDO
+   → Apenas extração de texto
+   → Processamento: ~1-2 segundos por documento
+   → Ideal para testes e documentos simples
+
+🔹 MODO PADRÃO (Recomendado)
+   → Extração + NER + Sumarização
+   → Processamento: ~5-10 segundos por documento
+   → Análise completa sem embeddings
+
+🔹 MODO COMPLETO
+   → Tudo do modo padrão + Embeddings + FAISS
+   → Processamento: ~15-30 segundos por documento
+   → Preparação completa para RAG
+
+===============================================================================
+  🔧 REQUISITOS DO SISTEMA
+===============================================================================
+
+MÍNIMO:
+  • Python 3.8 ou superior
+  • 4GB de RAM
+  • 2GB de espaço em disco
+
+RECOMENDADO:
+  • Python 3.10 ou superior
+  • 8GB de RAM
+  • 5GB de espaço em disco
+  • Processador multi-core
+
+===============================================================================
+  ❓ PROBLEMAS COMUNS
+===============================================================================
+
+❌ "Python não encontrado"
+   → Instale Python de: https://www.python.org/downloads/
+   → IMPORTANTE: Marque "Add Python to PATH" durante instalação
+
+❌ "Módulos NLP não disponíveis"
+   → Execute: INSTALAR_COMPLETO.bat
+   → Aguarde instalação completa
+   → Teste com: TESTAR_NLP.bat
+
+❌ Processamento muito lento
+   → Use MODO_RAPIDO.bat
+   → Ou desative NLP quando executar
+   → Processe menos documentos por vez
+
+❌ Erro ao ler PDF
+   → Alguns PDFs protegidos podem falhar
+   → PDFs escaneados precisam OCR
+   → Tente com outro PDF para verificar
+
+===============================================================================
+  📊 EXEMPLO DE SAÍDA JSON
+===============================================================================
+
+O sistema gera arquivos JSON estruturados com:
+
+{
+  "metadata": {
+    "total_files": 10,
+    "nlp_enabled": true
+  },
+  "documents": [
+    {
+      "id": "doc_0001",
+      "filename": "acordao.pdf",
+      "content": "texto completo...",
+      "nlp_analysis": {
+        "entidades": {
+          "processos": [...],
+          "leis": [...],
+          "tribunais": [...]
+        },
+        "sumarizacao": {
+          "resumo": "...",
+          "pontos_chave": [...]
+        },
+        "classificacao": {
+          "tipo_documento": "acordao",
+          "area_direito": ["civil"]
+        }
+      }
+    }
+  ]
+}
+
+===============================================================================
+  🎓 CASOS DE USO
+===============================================================================
+
+✓ Pesquisa Jurídica
+  → Extração automática de jurisprudências
+  → Análise de precedentes
+
+✓ Escritórios de Advocacia
+  → Organização de acervo documental
+  → Busca semântica em processos
+
+✓ Tribunais
+  → Catalogação de decisões
+  → Análise estatística
+
+✓ Sistemas de IA (RAG)
+  → Base de conhecimento vetorizada
+  → Contexto para LLMs (ChatGPT, Claude, etc.)
+
+===============================================================================
+  🛠️ TECNOLOGIAS UTILIZADAS
+===============================================================================
+
+• Python 3.8+
+• spaCy (NLP para português)
+• Transformers (modelos de linguagem)
+• PyTorch (deep learning)
+• Sentence-Transformers (embeddings)
+• FAISS (busca vetorial)
+• PyPDF, pdfplumber (extração de PDF)
+
+===============================================================================
+  📞 SUPORTE
+===============================================================================
+
+1. Leia: GUIA_RAPIDO.md (tutorial completo)
+2. Execute: TESTAR_NLP.bat (diagnóstico)
+3. Consulte: README_V2.md (documentação técnica)
+4. Edite: config.py (personalizações)
+
+===============================================================================
+  🎯 PRÓXIMOS PASSOS
+===============================================================================
+
+1. ✅ Execute: INSTALAR_COMPLETO.bat (se ainda não fez)
+2. ✅ Leia: GUIA_RAPIDO.md (5 minutos de leitura)
+3. ✅ Teste: Execute com 2-3 documentos de exemplo
+4. ✅ Configure: Ajuste config.py conforme necessário
+5. ✅ Use: Processe todo seu acervo!
+
+===============================================================================
+
+🧠 Sistema de IA Jurídica - Estrategista Jurídico-Cognitivo v2.0
+   Desenvolvido com Claude AI | 2024
+
+   Transformando documentos jurídicos em conhecimento estruturado para IA
+
+===============================================================================
