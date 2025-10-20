@@ -1,177 +1,137 @@
-# Conversor TXT/PDF para JSON - Base de Conhecimento para IA
+# Sistema de IA Jurídica - Estrategista Jurídico-Cognitivo
 
-Programa Python que converte arquivos TXT e PDF de uma pasta (incluindo subpastas) em arquivo(s) JSON otimizado(s) para uso como base de conhecimento em modelos de IA como Claude, GPT, Gemini e Perplexity.
+**Versão 2.0**
 
-## Características
+Este projeto é uma ferramenta avançada de processamento de documentos jurídicos, projetada para converter arquivos `TXT` e `PDF` em uma base de conhecimento estruturada em formato `JSON`. O sistema foi desenvolvido com foco em IA, aplicando técnicas de Processamento de Linguagem Natural (NLP) para enriquecer os dados e prepará-los para uso em modelos como Claude, GPT, e Gemini.
 
-- Interface gráfica para seleção de pasta
-- Processamento recursivo de diretórios (mantém hierarquia)
-- Suporte para arquivos TXT e PDF
-- Detecção automática de encoding para arquivos TXT
-- Extração de texto de PDFs com múltiplas páginas
-- Geração de JSON estruturado e otimizado
-- Metadados detalhados de cada documento
-- Estatísticas de processamento
-- Divisão automática em múltiplos JSONs se necessário
+## 🌟 Funcionalidades Principais
 
-## Requisitos
+- **Interface Gráfica**: Seleção de pastas de forma intuitiva.
+- **Processamento Recursivo**: Analisa todos os subdiretórios, mantendo a estrutura hierárquica.
+- **Suporte a Múltiplos Formatos**: Extrai texto de arquivos `.txt`, `.pdf`, e `.docx`.
+- **Análise NLP Avançada**:
+  - **Reconhecimento de Entidades Nomeadas (NER)**: Identifica termos jurídicos como leis, processos, tribunais, etc.
+  - **Sumarização Automática**: Gera resumos extrativos e abstrativos.
+  - **Análise Estrutural**: Identifica teses, argumentos e decisões.
+  - **Classificação de Documentos**: Determina o tipo de documento e a área do direito.
+- **Preparação para RAG**: Otimiza os dados para sistemas de *Retrieval-Augmented Generation*.
+- **Divisão de Arquivos Grandes**: Separa a base de conhecimento em múltiplos arquivos `JSON` para se adequar aos limites dos modelos de IA.
+- **Configuração Flexível**: Permite escolher o nível de processamento NLP (rápido, padrão, completo).
+
+## 🚀 Começo Rápido
+
+### Requisitos
 
 - Python 3.7 ou superior
-- tkinter (geralmente incluído no Python)
+- `tkinter` (geralmente incluído no Python)
 
-## Instalação
+### Instalação
 
-1. Clone ou baixe este repositório
+1. **Clone ou baixe este repositório.**
 
-2. Instale as dependências:
+2. **Instale as dependências:**
+   O método recomendado é usar o `pip` com o arquivo `requirements.txt`.
+   ```bash
+   pip install -r requirements.txt
+   ```
+   Caso prefira, pode usar o script de instalação para Windows:
+   - `instalar_dependencias.bat`
 
-```bash
-pip install -r requirements.txt
+### Execução
+
+- **Windows (Modo Fácil)**:
+  - **`INICIAR.bat`**: Executa o programa com uma interface gráfica simples.
+  - **`MODO_RAPIDO.bat`**: Executa com configurações de NLP otimizadas para velocidade.
+
+- **Linux/Mac ou Manualmente**:
+  ```bash
+  python main.py
+  ```
+
+O programa guiará você através das seguintes etapas:
+1. **Seleção da pasta** com os documentos.
+2. **Configuração do processamento NLP** (se deseja ativar e em qual modo).
+3. **Definição do tamanho máximo** para os arquivos `JSON` de saída.
+
+## 🏗️ Estrutura do Projeto
+
+O projeto é organizado de forma modular para facilitar a manutenção e expansão:
+
+```
+/
+├── main.py                    # Script principal que orquestra o processo
+├── config.py                  # Configurações de NLP, extração e performance
+├── requirements.txt           # Dependências do projeto
+├── README.md                  # Esta documentação
+│
+├── *.bat                      # Scripts para facilitar a execução no Windows
+│
+└── modules/                   # Módulos especializados
+    ├── __init__.py
+    ├── file_scanner.py        # Escaneia diretórios e localiza arquivos
+    ├── txt_reader.py          # Lê arquivos de texto com detecção de encoding
+    ├── pdf_reader.py          # Extrai texto de arquivos PDF
+    ├── json_generator.py      # Gera e formata o JSON de saída
+    ├── nlp_processor.py       # Orquestra a análise NLP
+    ├── legal_ner.py           # Reconhecimento de Entidades Jurídicas
+    ├── legal_summarizer.py    # Sumarização de textos jurídicos
+    └── rag_indexer.py         # Prepara os dados para sistemas RAG
 ```
 
-Ou instale manualmente:
+## 📄 Estrutura do JSON Gerado
 
-```bash
-pip install pypdf chardet
-```
-
-## Uso
-
-### Windows (Modo Fácil)
-
-Basta dar duplo clique em um dos arquivos:
-
-- **INICIAR.bat** - Executa tudo automaticamente (recomendado)
-- **executar.bat** - Executa com verificações detalhadas
-- **instalar_dependencias.bat** - Apenas instala as dependências
-
-### Linux/Mac ou Manual
-
-Execute o programa:
-
-```bash
-python main.py
-```
-
-O programa irá:
-
-1. Abrir uma janela para você selecionar a pasta desejada
-2. Escanear recursivamente todos os arquivos .txt e .pdf
-3. Processar cada arquivo extraindo seu conteúdo
-4. Gerar um arquivo JSON com toda a base de conhecimento
-5. Salvar o arquivo no mesmo diretório do programa
-
-## Estrutura do JSON Gerado
+O `JSON` de saída é enriquecido com uma análise NLP detalhada, tornando-o pronto para uso em aplicações de IA.
 
 ```json
 {
+  "schema_version": "2.0",
+  "generated_at": "2025-10-20T12:00:00",
   "metadata": {
-    "source_directory": "caminho/da/pasta",
-    "creation_date": "2025-01-13T10:30:00",
-    "total_files": 15,
-    "file_types": {
-      "txt": 10,
-      "pdf": 5
+    "source_directory": "/path/to/your/documents",
+    "nlp_enabled": true
+  },
+  "statistics": {
+    "total_documents": 1,
+    "nlp_analysis": {
+      "total_entities": 50,
+      "entity_types": { "processo": 5, "lei": 10 }
     }
   },
   "documents": [
     {
       "id": "doc_0001",
-      "filename": "exemplo.txt",
-      "relative_path": "pasta/exemplo.txt",
-      "type": "txt",
-      "size_bytes": 1024,
-      "modified_date": "2025-01-10T15:20:00",
-      "content": "Conteúdo do arquivo...",
-      "char_count": 500,
-      "word_count": 100
+      "filename": "documento.pdf",
+      "content": "...",
+      "nlp_analysis": {
+        "entidades": {
+          "processos": [{ "text": "000123-45.2023.0.00.0000" }],
+          "leis": [{ "text": "Lei nº 9.099/95" }]
+        },
+        "sumarizacao": {
+          "resumo": "Este é um resumo do documento...",
+          "pontos_chave": ["Ponto 1", "Ponto 2"]
+        },
+        "classificacao": {
+          "tipo_documento": "sentenca",
+          "area_direito": ["civil"]
+        }
+      }
     }
   ]
 }
 ```
 
-## Estrutura do Projeto
+## ⚙️ Configuração Avançada
 
-```
-TXT-PDF = JSON/
-├── main.py                      # Programa principal
-├── requirements.txt             # Dependências
-├── README.md                    # Documentação
-│
-├── INICIAR.bat                  # Executar (Windows - simples)
-├── executar.bat                 # Executar (Windows - detalhado)
-├── instalar_dependencias.bat    # Instalar apenas
-│
-├── QUICK_START.md               # Guia de início rápido
-├── EXEMPLO_USO.md              # Exemplos detalhados
-│
-└── modules/                     # Módulos do programa
-    ├── __init__.py
-    ├── file_scanner.py          # Scanner de diretórios
-    ├── txt_reader.py            # Leitor de arquivos TXT
-    ├── pdf_reader.py            # Leitor de arquivos PDF
-    └── json_generator.py        # Gerador de JSON
-```
+O arquivo `config.py` permite personalizar diversos aspectos do sistema:
+- **Modelos de NLP**: Especifique quais modelos do `spaCy` ou `transformers` utilizar.
+- **Parâmetros de Sumarização**: Ajuste o comprimento e a taxa de compressão dos resumos.
+- **Configurações de RAG**: Defina o tamanho dos *chunks* e a sobreposição.
 
-## Recursos Avançados
+## 🤝 Contribuições
 
-### Detecção Automática de Encoding
-O programa tenta múltiplos encodings para garantir leitura correta:
-- UTF-8
-- UTF-8 com BOM
-- Latin-1
-- CP1252 (Windows)
-- ISO-8859-1
+Este projeto foi desenvolvido com o auxílio da IA Claude. Sinta-se à vontade para abrir *issues*, sugerir melhorias ou enviar *pull requests*. Toda contribuição é bem-vinda!
 
-### Processamento de PDFs
-- Extrai texto de todas as páginas
-- Mantém separação entre páginas
-- Tratamento de erros por página
+## 📜 Licença
 
-### Organização Hierárquica
-- Mantém estrutura de pastas original
-- Caminhos relativos preservados
-- Facilita localização dos documentos
-
-## Uso com Modelos de IA
-
-### Claude (Anthropic)
-```python
-# Carregue o JSON e use como contexto
-with open('knowledge_base.json', 'r', encoding='utf-8') as f:
-    knowledge = json.load(f)
-```
-
-### GPT (OpenAI)
-Ideal para uso com Assistants API ou embeddings.
-
-### Gemini (Google)
-Compatível com contextos longos do Gemini.
-
-### Perplexity
-Use como fonte de conhecimento para pesquisas.
-
-## Tratamento de Erros
-
-O programa é robusto e:
-- Continua processando mesmo se um arquivo falhar
-- Exibe claramente quais arquivos tiveram problemas
-- Não interrompe a execução por erros individuais
-
-## Limitações
-
-- PDFs com imagens: apenas o texto é extraído
-- PDFs protegidos: podem não ser lidos
-- Arquivos muito grandes: podem ser divididos em múltiplos JSONs
-
-## Licença
-
-Este projeto foi gerado por Claude AI e é livre para uso e modificação.
-
-## Contribuições
-
-Sinta-se livre para melhorar o código e adicionar novas funcionalidades!
-
-## Suporte
-
-Para problemas ou dúvidas, abra uma issue no repositório.
+Este projeto é de código aberto e livre para uso e modificação.

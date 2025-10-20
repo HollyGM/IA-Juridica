@@ -98,20 +98,6 @@ if %errorlevel% neq 0 (
 echo.
 pause
 
-echo.
-echo ============================================================
-echo   TESTE 5: Executar main.py com --help
-echo ============================================================
-echo.
-echo Tentando executar o programa principal...
-echo.
-
-python main.py
-
-echo.
-echo Codigo de saida: %errorlevel%
-echo.
-
 :fim
 echo.
 echo ============================================================
