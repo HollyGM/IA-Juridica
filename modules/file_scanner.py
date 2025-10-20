@@ -1,5 +1,5 @@
 """
-Módulo para escanear diretórios e encontrar arquivos TXT e PDF
+Módulo para escanear diretórios e encontrar arquivos TXT, PDF e DOCX
 """
 
 import os
@@ -12,13 +12,13 @@ def scan_directory(root_path, extensions=None):
 
     Args:
         root_path: Caminho raiz para iniciar a busca
-        extensions: Lista de extensões a buscar (padrão: ['.txt', '.pdf'])
+        extensions: Lista de extensões a buscar (padrão: ['.txt', '.pdf', '.docx'])
 
     Returns:
         list: Lista de dicionários com informações dos arquivos encontrados
     """
     if extensions is None:
-        extensions = ['.txt', '.pdf']
+        extensions = ['.txt', '.pdf', '.docx']
 
     # Normaliza extensões para lowercase
     extensions = [ext.lower() if ext.startswith('.') else f'.{ext.lower()}'
@@ -85,7 +85,7 @@ def get_directory_structure(root_path):
                     }
                     parent_dict['children'].append(dir_dict)
                     build_tree(item, dir_dict)
-                elif item.suffix.lower() in ['.txt', '.pdf']:
+                elif item.suffix.lower() in ['.txt', '.pdf', '.docx']:
                     file_dict = {
                         'name': item.name,
                         'path': str(item),

@@ -1,137 +1,105 @@
 # Sistema de IA Jurídica - Estrategista Jurídico-Cognitivo
 
-**Versão 2.0**
+**Versão 3.0**
 
-Este projeto é uma ferramenta avançada de processamento de documentos jurídicos, projetada para converter arquivos `TXT` e `PDF` em uma base de conhecimento estruturada em formato `JSON`. O sistema foi desenvolvido com foco em IA, aplicando técnicas de Processamento de Linguagem Natural (NLP) para enriquecer os dados e prepará-los para uso em modelos como Claude, GPT, e Gemini.
+Este projeto é uma ferramenta de linha de comando robusta e avançada, projetada para converter documentos jurídicos (`.txt`, `.pdf`, `.docx`) em uma base de conhecimento `JSON` estruturada. O sistema utiliza Processamento de Linguagem Natural (NLP) para enriquecer os dados, preparando-os para uso em modelos de IA como Claude, GPT e Gemini.
 
 ## 🌟 Funcionalidades Principais
 
-- **Interface Gráfica**: Seleção de pastas de forma intuitiva.
-- **Processamento Recursivo**: Analisa todos os subdiretórios, mantendo a estrutura hierárquica.
-- **Suporte a Múltiplos Formatos**: Extrai texto de arquivos `.txt`, `.pdf`, e `.docx`.
+- **Suporte a Múltiplos Formatos**: Extrai texto de `.txt`, `.pdf` e `.docx`.
+- **Modo Interativo e Autônomo**:
+  - **Interface Gráfica**: Um seletor de pastas para uso fácil e interativo.
+  - **Linha de Comando**: Argumentos para automação completa de tarefas.
 - **Análise NLP Avançada**:
-  - **Reconhecimento de Entidades Nomeadas (NER)**: Identifica termos jurídicos como leis, processos, tribunais, etc.
-  - **Sumarização Automática**: Gera resumos extrativos e abstrativos.
-  - **Análise Estrutural**: Identifica teses, argumentos e decisões.
-  - **Classificação de Documentos**: Determina o tipo de documento e a área do direito.
+  - **NER Jurídico**: Identifica leis, processos, tribunais e outras entidades.
+  - **Sumarização Automática**: Gera resumos inteligentes dos documentos.
+  - **Classificação e Análise Estrutural**: Entende o propósito e a estrutura do texto.
+- **Logs Detalhados**: Registra cada passo do processo em um arquivo `processing.log` para fácil depuração e auditoria.
+- **Relatório em HTML**: Gera um relatório final claro e profissional com estatísticas e resultados.
 - **Preparação para RAG**: Otimiza os dados para sistemas de *Retrieval-Augmented Generation*.
-- **Divisão de Arquivos Grandes**: Separa a base de conhecimento em múltiplos arquivos `JSON` para se adequar aos limites dos modelos de IA.
-- **Configuração Flexível**: Permite escolher o nível de processamento NLP (rápido, padrão, completo).
+- **Configuração Flexível**: Permite escolher o nível de processamento NLP (`rapido`, `padrao`, `completo`).
 
 ## 🚀 Começo Rápido
 
 ### Requisitos
 
-- Python 3.7 ou superior
-- `tkinter` (geralmente incluído no Python)
+- Python 3.7+
+- `tkinter` (para o modo interativo)
 
 ### Instalação
 
-1. **Clone ou baixe este repositório.**
+1.  **Clone o repositório:**
+    ```bash
+    git clone [URL-do-seu-repositorio]
+    cd [nome-do-repositorio]
+    ```
+2.  **Instale as dependências:**
+    Use o script para Windows ou o `pip` para outros sistemas.
+    ```bash
+    # Windows
+    INSTALAR_COMPLETO.bat
 
-2. **Instale as dependências:**
-   O método recomendado é usar o `pip` com o arquivo `requirements.txt`.
-   ```bash
-   pip install -r requirements.txt
-   ```
-   Caso prefira, pode usar o script de instalação para Windows:
-   - `instalar_dependencias.bat`
+    # Linux/Mac
+    pip install -r requirements.txt
+    ```
 
-### Execução
+### Modos de Execução
 
-- **Windows (Modo Fácil)**:
-  - **`INICIAR.bat`**: Executa o programa com uma interface gráfica simples.
-  - **`MODO_RAPIDO.bat`**: Executa com configurações de NLP otimizadas para velocidade.
+#### Modo Interativo (Recomendado para começar)
 
-- **Linux/Mac ou Manualmente**:
-  ```bash
-  python main.py
-  ```
+Basta executar o script principal. Ele fará perguntas para guiar o processo.
 
-O programa guiará você através das seguintes etapas:
-1. **Seleção da pasta** com os documentos.
-2. **Configuração do processamento NLP** (se deseja ativar e em qual modo).
-3. **Definição do tamanho máximo** para os arquivos `JSON` de saída.
+-   **Windows**: Dê um duplo clique em `EXECUTAR_IA_JURIDICA.bat`.
+-   **Linux/Mac**:
+    ```bash
+    python main.py
+    ```
+
+#### Modo Autônomo (via Linha de Comando)
+
+Use argumentos para especificar a pasta, o modo de NLP e o tamanho máximo do JSON.
+
+```bash
+python main.py --pasta "/caminho/para/seus/documentos" --nlp "padrao" --tamanho-max 100
+```
+
+-   `--pasta` ou `-p`: Define o diretório dos documentos.
+-   `--nlp` ou `-n`: Escolhe o nível de análise (`nenhum`, `rapido`, `padrao`, `completo`).
+-   `--tamanho-max` ou `-t`: Define o tamanho máximo de cada arquivo JSON em MB.
+
+## 📄 Saídas do Processo
+
+Ao final da execução, você encontrará os seguintes arquivos no diretório:
+
+-   `knowledge_base_... .json`: Um ou mais arquivos JSON com os dados estruturados.
+-   `relatorio_... .html`: Um relatório resumido com as estatísticas do processo.
+-   `processing.log`: Um log detalhado de cada etapa da execução.
 
 ## 🏗️ Estrutura do Projeto
 
-O projeto é organizado de forma modular para facilitar a manutenção e expansão:
+O projeto é modular para facilitar a manutenção:
 
 ```
 /
-├── main.py                    # Script principal que orquestra o processo
-├── config.py                  # Configurações de NLP, extração e performance
-├── requirements.txt           # Dependências do projeto
-├── README.md                  # Esta documentação
+├── main.py                    # Script principal
+├── config.py                  # Configurações avançadas
+├── requirements.txt           # Dependências
+├── processing.log             # Arquivo de log gerado
 │
-├── *.bat                      # Scripts para facilitar a execução no Windows
+├── *.bat                      # Scripts para Windows
 │
-└── modules/                   # Módulos especializados
-    ├── __init__.py
-    ├── file_scanner.py        # Escaneia diretórios e localiza arquivos
-    ├── txt_reader.py          # Lê arquivos de texto com detecção de encoding
-    ├── pdf_reader.py          # Extrai texto de arquivos PDF
-    ├── json_generator.py      # Gera e formata o JSON de saída
-    ├── nlp_processor.py       # Orquestra a análise NLP
-    ├── legal_ner.py           # Reconhecimento de Entidades Jurídicas
-    ├── legal_summarizer.py    # Sumarização de textos jurídicos
-    └── rag_indexer.py         # Prepara os dados para sistemas RAG
-```
-
-## 📄 Estrutura do JSON Gerado
-
-O `JSON` de saída é enriquecido com uma análise NLP detalhada, tornando-o pronto para uso em aplicações de IA.
-
-```json
-{
-  "schema_version": "2.0",
-  "generated_at": "2025-10-20T12:00:00",
-  "metadata": {
-    "source_directory": "/path/to/your/documents",
-    "nlp_enabled": true
-  },
-  "statistics": {
-    "total_documents": 1,
-    "nlp_analysis": {
-      "total_entities": 50,
-      "entity_types": { "processo": 5, "lei": 10 }
-    }
-  },
-  "documents": [
-    {
-      "id": "doc_0001",
-      "filename": "documento.pdf",
-      "content": "...",
-      "nlp_analysis": {
-        "entidades": {
-          "processos": [{ "text": "000123-45.2023.0.00.0000" }],
-          "leis": [{ "text": "Lei nº 9.099/95" }]
-        },
-        "sumarizacao": {
-          "resumo": "Este é um resumo do documento...",
-          "pontos_chave": ["Ponto 1", "Ponto 2"]
-        },
-        "classificacao": {
-          "tipo_documento": "sentenca",
-          "area_direito": ["civil"]
-        }
-      }
-    }
-  ]
-}
+└── modules/
+    ├── file_scanner.py        # Localiza arquivos
+    ├── (leitores de arquivo)  # txt_reader.py, pdf_reader.py, docx_reader.py
+    ├── json_generator.py      # Gera o JSON
+    ├── report_generator.py    # Gera o relatório HTML
+    └── (módulos de NLP)       # nlp_processor.py, legal_ner.py, etc.
 ```
 
 ## ⚙️ Configuração Avançada
 
-O arquivo `config.py` permite personalizar diversos aspectos do sistema:
-- **Modelos de NLP**: Especifique quais modelos do `spaCy` ou `transformers` utilizar.
-- **Parâmetros de Sumarização**: Ajuste o comprimento e a taxa de compressão dos resumos.
-- **Configurações de RAG**: Defina o tamanho dos *chunks* e a sobreposição.
+Para especialistas, o arquivo `config.py` oferece controle fino sobre os modelos de NLP, parâmetros de sumarização, e configurações de RAG.
 
 ## 🤝 Contribuições
 
-Este projeto foi desenvolvido com o auxílio da IA Claude. Sinta-se à vontade para abrir *issues*, sugerir melhorias ou enviar *pull requests*. Toda contribuição é bem-vinda!
-
-## 📜 Licença
-
-Este projeto é de código aberto e livre para uso e modificação.
+Este projeto foi aprimorado pela IA Claude. Contribuições são bem-vindas! Sinta-se à vontade para abrir *issues* ou enviar *pull requests*.
